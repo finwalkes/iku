@@ -4,9 +4,6 @@ import numpy as np
 import requests
 from glom import glom
 
-
-
-
 api_key = "11772efb3a01408c8c0407a8be9ee5d9"
 col1 = st.columns
 point = st.selectbox(
