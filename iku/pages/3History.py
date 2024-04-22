@@ -119,7 +119,7 @@ with tab2:
         dt_city1 = dt[["city_name", "lat", "lon"]]
         dt_merge1 = pd.concat([dt_city1, dt_aqi1], axis=1, sort=False)
         data1 = dt_merge1.values.tolist()
-
+        
         # Tampilkan menggunakan Streamlit
         st.write("Tren History Data Kualitas Udara pada tanggal", start_date, "sampai", end_date, 'pada kota',dt_merge1['city_name'].iloc[0])
         st.write(pd.DataFrame(data1, columns=["Nama Kota", "latitude", "longtitude", "AQI", "PM10", "PM25", "Ozone", "SO2", "NO2", "CO", "Timestamp_utc", "timestamp_local"]))
