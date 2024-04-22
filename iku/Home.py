@@ -115,6 +115,4 @@ st.markdown("""
     Skripsi © 2024 Bagus Wahyu Pratomo. 2015061003
     """)
 
-st.sidebar.markdown("""
-    © 2024 Bagus Wahyu Pratomo.
-    """)
+
