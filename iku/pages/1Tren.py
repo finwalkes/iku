@@ -60,7 +60,7 @@ elif point == "Pesisir Barat":
 
 st.header("Tren Kualitas Udara di Provinsi Lampung")
 
-tab1, tab2, tab3 = st.tabs(["Live Tren", "History Tren", "Forcast Tren"])
+tab1, tab2= st.tabs(["Live Tren", "History Tren"])
 
 with tab1:
     # live history
@@ -163,12 +163,6 @@ with tab2:
         col2.line_chart(df_merge1.no2)
         col2.write("Karbon Monoksida (CO)")
         col2.line_chart(df_merge1.co)
-        
-        
-with tab3:
-    st.subheader("Tren Forcasting Kualitas Udara")
-    
-
 
     # Footer
 st.markdown("""
