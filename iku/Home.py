@@ -4,6 +4,10 @@ import numpy as np
 import requests
 from glom import glom
 
+from modules.menu import admin_sidebar
+
+admin_sidebar()
+
 st.title('Aplikasi Pemantauan Kualitas Udara Provinsi Lampung')
 
 api_key = "11772efb3a01408c8c0407a8be9ee5d9"
