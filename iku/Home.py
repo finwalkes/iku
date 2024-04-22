@@ -107,7 +107,7 @@ st.write(pd.DataFrame(data, columns=["Zona Waktu","Nama Kota", "latitude", "long
 st.write("Data Cuaca Saat ini:")
 st.write(pd.DataFrame(data1, columns=["Nama Kota", 'Temperature (C)', 'Relative humidity (%)', 'Tekanan (mb)', "Kecepatan Angin (m/s)", "Waktu"]))
 
-st.image('image/iku.jpg', caption="Klasifikasi Kualitas Udara")
+st.image('iku/image/iku.jpg', caption="Klasifikasi Kualitas Udara")
 
 # Footer
 st.markdown("""
