@@ -5,10 +5,17 @@ import requests
 from glom import glom
 
 from modules.menu import admin_sidebar
+def admin_sidebar():
+    with st.sidebar:
+        st.page_link('./pages/1Tren.py', label='Tren')
+        st.page_link('./pages/2Prediksi.py', label='Prediksi')
+        st.page_link('./pages/3History.py', label='History')
+        st.page_link('./pages/4About.py', label='About')
+        st.page_link('./pages/5FAQ.py', label='FAQ')
 
+st.title(Aplikasi Pemantauan Kualitas Udara Provinsi Lampung')
 admin_sidebar()
 
-st.title('Aplikasi Pemantauan Kualitas Udara Provinsi Lampung')
 
 api_key = "11772efb3a01408c8c0407a8be9ee5d9"
 col1 = st.columns
