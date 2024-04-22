@@ -122,7 +122,7 @@ with tab2:
         st.write("Tren History Data Kualitas Udara pada tanggal", start_date, "sampai", end_date, 'pada kota',df_merge1['city_name'].iloc[0])
         st.write(pd.DataFrame(data1, columns=["Nama Kota", "latitude", "longtitude", "AQI", "PM10", "PM25", "Ozone", "SO2", "NO2", "CO", "Timestamp"]))
 
-st.image('image/iku.jpg', caption="Klasifikasi Kualitas Udara")
+st.image('iku/image/iku.jpg', caption="Klasifikasi Kualitas Udara")
 
 # Footer
 st.markdown("""
