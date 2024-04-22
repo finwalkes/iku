@@ -1,0 +1,6 @@
+streamlit==1.33.0
+pandas==2.0.1
+numpy==1.23.5
+requests==2.31.0
+glom==23.5.0
+st.Pages
