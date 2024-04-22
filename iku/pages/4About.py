@@ -10,7 +10,7 @@ def main():
     st.header("Kualitas Udara")
     st.write("")
 
-    st.image('image/iku2.jpg', caption="Klasifikasi Kualitas Udara")
+    st.image('iku/image/iku2.jpg', caption="Klasifikasi Kualitas Udara")
 
     st.header("Perhitungan Indeks Kualitas Udara (IKU)")
     
