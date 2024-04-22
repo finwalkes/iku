@@ -4,4 +4,4 @@ numpy==1.23.5
 requests==2.31.0
 glom==23.5.0
 streamlit_book==0.7.5
-st-pages
+st-Pages
