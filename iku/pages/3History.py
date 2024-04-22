@@ -74,6 +74,7 @@ with tab1:
         "so2" : (["so2"]),
         "no2" : (["no2"]),
         "co" : (["co"]),
+        "timestamp_utc" : (["timestamp_utc"]),
         "timestamp_local" : (['timestamp_local'])
     }
 
@@ -85,7 +86,7 @@ with tab1:
 
     # Tampilkan menggunakan Streamlit
     st.write("History Data Kualitas Udara Pada Kota ", df_merge['city_name'].iloc[0])
-    st.write(pd.DataFrame(data, columns=["Nama Kota", "latitude", "longtitude", "AQI", "PM10", "PM25", "Ozone", "SO2", "NO2", "CO", "Timestamp"]))
+    st.write(pd.DataFrame(data, columns=["Nama Kota", "latitude", "longtitude", "AQI", "PM10", "PM25", "Ozone", "SO2", "NO2", "CO", "Timestamp_utc", "Timestamp_Local"]))
     
 with tab2:
     col1, col2 = st.columns(2)
@@ -100,7 +101,7 @@ with tab2:
         dt = pd.read_json(response2.text)
         
         # Proses data
-        target_aqi1 = df["data"]
+        target_aqi1 = dt["data"]
         spec1 = {      
             "aqi" : (["aqi"]),
             "pm10" : (["pm10"]),
@@ -109,18 +110,19 @@ with tab2:
             "so2" : (["so2"]),
             "no2" : (["no2"]),
             "co" : (["co"]),
+            "timestamp_utc" : (["timestamp_utc"]),
             "timestamp_local" : (['timestamp_local'])
         }
 
         data_json1 = glom(target_aqi1, spec1)
-        df_aqi1 = pd.DataFrame.from_dict(data_json1)
-        df_city1 = df[["city_name", "lat", "lon"]]
-        df_merge1 = pd.concat([df_city1, df_aqi1], axis=1, sort=False)
-        data1 = df_merge1.values.tolist()
+        dt_aqi1 = pd.DataFrame.from_dict(data_json1)
+        dt_city1 = dt[["city_name", "lat", "lon"]]
+        dt_merge1 = pd.concat([dt_city1, dt_aqi1], axis=1, sort=False)
+        data1 = dt_merge1.values.tolist()
 
         # Tampilkan menggunakan Streamlit
-        st.write("Tren History Data Kualitas Udara pada tanggal", start_date, "sampai", end_date, 'pada kota',df_merge1['city_name'].iloc[0])
-        st.write(pd.DataFrame(data1, columns=["Nama Kota", "latitude", "longtitude", "AQI", "PM10", "PM25", "Ozone", "SO2", "NO2", "CO", "Timestamp"]))
+        st.write("Tren History Data Kualitas Udara pada tanggal", start_date, "sampai", end_date, 'pada kota',dt_merge1['city_name'].iloc[0])
+        st.write(pd.DataFrame(data1, columns=["Nama Kota", "latitude", "longtitude", "AQI", "PM10", "PM25", "Ozone", "SO2", "NO2", "CO", "Timestamp_utc", "timestamp_local"]))
 
 st.image('iku/image/iku.jpg', caption="Klasifikasi Kualitas Udara")
 
