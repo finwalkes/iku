@@ -1,6 +1,6 @@
 import streamlit as st
 
-st.header("Klasifikasi Indeks Kualitas Udara")
+st.header("Klasifikasi Kualitas Udara")
 
 tab1, tab2, tab3, tab4, tab5, tab6, tab7 = st.tabs(['AQI', 'PM2.5', 'PM10', 'Karbon Monoksida (CO)', 'Sulfur Dioksida (SO2)', 'Nitrogen Dioksida (NO2)', 'Ozone (O3)'])
 
