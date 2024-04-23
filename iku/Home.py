@@ -4,7 +4,7 @@ import numpy as np
 import requests
 from glom import glom
 
-st.title('Aplikasi Pemantauan Kualitas Udara Provinsi Lampung')
+st.header('Aplikasi Pemantauan Kualitas Udara Provinsi Lampung')
 
 api_key = "11772efb3a01408c8c0407a8be9ee5d9"
 col1 = st.columns
