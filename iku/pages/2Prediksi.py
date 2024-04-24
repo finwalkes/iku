@@ -131,11 +131,6 @@ if st.button('Predict Air Quality'):
     predictions = scaler.inverse_transform(predictions)
     predictions = pd.DataFrame(predictions, columns=['aqi_pred', 'pm10_pred', 'pm25_pred', 'o3_pred', 'so2_pred', 'no2_pred', 'co_pred'])
 
-    # Buat timestamp untuk data prediksi
-    start_timestamp = df_merge['timestamp_local'].iloc[0]
-    forecast_dates = pd.date_range(start=start_timestamp, periods=predictions.shape[0] +1, freq='H')[1:]
-    predictions['timestamp_local'] = forecast_dates
-
     # Gabungkan prediksi dengan data historis
     df_final = pd.concat([df_merge.reset_index(drop=True), predictions], axis=0, ignore_index=True)
     col1, col2 = st.columns(2)
