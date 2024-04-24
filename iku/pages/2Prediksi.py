@@ -144,9 +144,11 @@ if st.button('Predict Air Quality'):
 
     # Plot real and predicted values for each feature separately
     for feature in ['aqi', 'pm10', 'pm25', 'o3', 'so2', 'no2', 'co']:
-        st.subheader(f'Predicted {feature.capitalize()}')
+        st.subheader(f'Real vs Predicted {feature.capitalize()}')
         chart_data = df_final[['timestamp_local', feature, f'{feature}_pred']]
+        chart_data = chart_data.rename(columns={feature: 'Real', f'{feature}_pred': 'Predicted'})
         st.line_chart(chart_data.set_index('timestamp_local'), use_container_width=True)
+
 
 # Footer
     st.markdown("""
