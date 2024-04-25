@@ -153,7 +153,7 @@ if st.button('Predict Air Quality'):
         chart_data = df_final[['timestamp_local', feature, f'{feature}_pred']]
         
         # Plot the line chart
-        st.line_chart(chart)
+        st.line_chart(chart_data)
 
 
 
