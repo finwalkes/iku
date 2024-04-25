@@ -146,14 +146,14 @@ if st.button('Predict Air Quality'):
     st.write("Data Prediksi")
     st.write(predictions)
     
-    # Plot real and predicted values for each feature separately
-    colors = ['blue', 'red']  # Colors for current data and predicted data, respectively
+   # Plot real and predicted values for each feature separately
     for feature in ['aqi', 'pm10', 'pm25', 'o3', 'so2', 'no2', 'co']:
         st.subheader(f'Predicted {feature.capitalize()}')
         chart_data = df_final[['timestamp_local', feature, f'{feature}_pred']]
         
         # Plot the line chart
-        st.line_chart(chart_data)
+        st.line_chart(chart_data.set_index('timestamp_local'))
+
 
 
 
