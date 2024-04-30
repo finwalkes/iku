@@ -17,7 +17,7 @@ def preprocess_input_data(input_data):
 # Function to make prediction
 def predict_air_quality(features):
     # Load your pre-trained LSTM model
-    model = load_model('model/psw.h5')  # Load your LSTM model
+    model = load_model('iku/iku/model/psw.h5')  # Load your LSTM model
 
     # Make prediction
     prediction = model.predict(features)
