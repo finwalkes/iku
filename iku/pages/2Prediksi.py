@@ -158,22 +158,6 @@ if st.button('Predict Air Quality'):
             st.line_chart(chart_data)
         else:
             st.write(f"Column names for {feature} or {feature}_pred not found in df_final.")
-    
-    # Define actual_values and predicted_values
-    actual_values = df_final[['aqi', 'pm10', 'pm25', 'o3', 'so2', 'no2', 'co']]
-    predicted_values = df_final[['aqi_pred', 'pm10_pred', 'pm25_pred', 'o3_pred', 'so2_pred', 'no2_pred', 'co_pred']]
-
-    # # Handle NaN values in actual_values and predicted_values
-    # actual_values.fillna(actual_values.mean(), inplace=True)
-    # predicted_values.fillna(predicted_values.mean(), inplace=True)
-
-    # Calculate R-squared values
-    r_squared_values = [calculate_r_squared(actual_values[feature], predicted_values[f'{feature}_pred']) for feature in actual_values.columns]
-
-    st.subheader("R-squared Values")
-    for i, feature in enumerate(actual_values.columns):
-        st.write(f"{feature.capitalize()}: {r_squared_values[i]}")
-        
 # Footer
     st.markdown("""
         ---
