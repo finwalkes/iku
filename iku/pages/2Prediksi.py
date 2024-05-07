@@ -50,10 +50,6 @@ def load_and_process_data(lat, lon, api_key):
     # df_merge.set_index('timestamp_local', inplace=True)
     return df_merge
 
-def calculate_r_squared(actual_values, predicted_values):
-    r_squared = r2_score(actual_values, predicted_values)
-    return r_squared
-
 # Streamlit UI
 st.header('Forcasting Kualitas Udara Menggunakan LSTM')
 
@@ -113,7 +109,7 @@ elif point == "Pesisir Barat":
 if st.button('Predict Air Quality'):
     df_merge = load_and_process_data(lat, lon, api_key)
 
-    st.subheader("Forecasting Kualitas udara dalam 36 Jam")
+    st.subheader("Forecasting Kualitas udara dalam 48 Jam")
 
     # Extract features for prediction
     features_for_prediction = df_merge[['aqi', 'pm10', 'pm25', 'o3', 'so2', 'no2', 'co']].values
